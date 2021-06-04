@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B5717FEB-76F1-486A-AC57-ED35C3B5EBAD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DBService</RootNamespace>
+    <AssemblyName>DBService</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Audit.EntityFramework, Version=17.0.5.0, Culture=neutral, PublicKeyToken=571d6b80b242c87e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Audit.EntityFramework.17.0.5\lib\net45\Audit.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Audit.NET, Version=17.0.5.0, Culture=neutral, PublicKeyToken=571d6b80b242c87e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Audit.NET.17.0.5\lib\net461\Audit.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Tests.cs" />
+    <Compile Include="DataBaseContext.cs" />
+    <Compile Include="Domain\M2MEntityOneEntityTwo.cs" />
+    <Compile Include="Domain\EntityTwo.cs" />
+    <Compile Include="Domain\Inheritance\LeafFive.cs" />
+    <Compile Include="Domain\Inheritance\LeafTwo.cs" />
+    <Compile Include="Domain\Inheritance\MiddleTwo.cs" />
+    <Compile Include="Domain\BaseClass.cs" />
+    <Compile Include="Domain\EntityOne.cs" />
+    <Compile Include="Domain\Inheritance\LeafOne.cs" />
+    <Compile Include="Domain\Inheritance\LeafFour.cs" />
+    <Compile Include="Domain\Inheritance\MiddleOne.cs" />
+    <Compile Include="Domain\Inheritance\MiddleThree.cs" />
+    <Compile Include="Domain\Inheritance\LeafThree.cs" />
+    <Compile Include="Domain\Inheritance\Root.cs" />
+    <Compile Include="Domain\ItemType.cs" />
+    <Compile Include="Mappings\LeafFiveMap.cs" />
+    <Compile Include="Mappings\LeafTwoMap.cs" />
+    <Compile Include="Mappings\BaseClassMap.cs" />
+    <Compile Include="Mappings\M2MEntityOneEntityTwoMap.cs" />
+    <Compile Include="Mappings\EntityOneMap.cs" />
+    <Compile Include="Mappings\LeafOneMap.cs" />
+    <Compile Include="Mappings\LeafFourMap.cs" />
+    <Compile Include="Mappings\MiddleOneMap.cs" />
+    <Compile Include="Mappings\MiddleThreeMap.cs" />
+    <Compile Include="Mappings\LeafThreeMap.cs" />
+    <Compile Include="Mappings\RootMap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
